@@ -1,0 +1,50 @@
+
+.projecthead{
+    text-align: center;
+    font-size: 50px;
+    color: green;
+    
+}
+h5{
+    color: brown;
+    font-size: 35px;
+    margin: 10px;
+     text-align:left;
+}
+p{
+    width: 1200px;
+    margin: auto;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    line-height: 1.5;
+    
+
+}
+
+body{
+    margin:50px;
+    background-color: beige;
+
+    
+}
+h1{
+    font-style: italic;
+    font-size: 50px;
+    color:green;
+    text-align: left;
+    
+}
+.projectsection{
+    
+    width:1200px;
+    margin: auto;
+}
+.skills{
+    width: 1200px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.5;
+    
+    
+}
