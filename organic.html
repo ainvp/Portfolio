@@ -114,6 +114,7 @@
     position:relative;
 }
 
+
 .banner-card h2{
     color:#1d4425;
     font-size:48px;
@@ -161,6 +162,48 @@
     margin-bottom:20px;
 }
 
+}
+ .banner-card{
+        height:auto;
+        min-height:250px;
+        padding:20px;
+    }
+
+    .banner-img-left{
+        width:120px;
+        left:5px;
+        bottom:5px;
+    }
+
+    .banner-img-right{
+        width:140px;
+        right:0;
+        top:auto;
+        bottom:0;
+        opacity:0.9;
+    }
+
+    .banner-card h2{
+        font-size:32px;
+    }
+
+    .banner-card div{
+        margin-left:130px !important;
+    }
+@media (max-width:572px){
+    .banner-card{
+        height:auto;
+        min-height:250px;
+        padding:20px;
+    }
+
+    .banner-img-left{
+        width:140px;
+    }
+
+    .banner-img-right{
+        width:140px;
+    }
 }
     </style>
     
@@ -295,48 +338,39 @@
     </div>
     <div class="row bottom-banner">
 
-            <div class="col-lg-6">
+    <div class="row bottom-banner">
+    <div class="col-12">
 
-                <div class="banner-card">
+        <div class="banner-card">
 
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+                <!-- Left Side -->
+                <div class="d-flex align-items-center">
                     <img src="images/avocado.jpg"
-                         class="banner-img-left"
+                         class="img-fluid me-3"
+                         style="width:180px;"
                          alt="Avocado">
 
-                    <div style="margin-left:220px">
-
-                        <h2>
-                            Organic<br>
-                            Vegetables
-                        </h2>
-
+                    <div>
+                        <h2>Organic<br>Vegetables</h2>
                         <button class="banner-btn mt-3">
                             Fresh Always
                         </button>
-
                     </div>
-
                 </div>
 
-            </div>
-
-            <div class="col-lg-6">
-
-                <div class="banner-card">
-
-                    <h2>
-                        Natural<br>
-                        & Healthy
-                    </h2>
-
-                    <p>
-                        Premium organic products directly from nature.
-                    </p>
+                <!-- Right Side -->
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <div class="me-3">
+                        <h2>Natural<br>& Healthy</h2>
+                        <p>Premium organic products directly from nature.</p>
+                    </div>
 
                     <img src="images/healthy.jpg"
-                         class="banner-img-right"
+                         class="img-fluid"
+                         style="width:200px;"
                          alt="Healthy Food">
-
                 </div>
 
             </div>
@@ -344,6 +378,9 @@
         </div>
 
     </div>
+</div>
+
+</div>
 
 </div>
 
