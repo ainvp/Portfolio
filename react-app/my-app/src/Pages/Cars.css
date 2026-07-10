@@ -1,0 +1,16 @@
+.cars-page{
+    width:90%;
+    margin:auto;
+    padding:40px 0;
+}
+
+.cars-page h1{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.cars-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
