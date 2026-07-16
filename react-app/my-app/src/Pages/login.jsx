@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
+import "./../Assets/Auth.css";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,82 +19,62 @@ const Login = () => {
         password,
       });
 
-      console.log(response);
-
-      // Save JWT Token
       localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("role", response.data.data.role);
+      localStorage.setItem("user", JSON.stringify(response.data.data));
 
-      // Save complete user details
-      localStorage.setItem(
-        "user",
-        JSON.stringify(response.data.data)
-      );
+      toast.success("Login Successful!");
 
-      alert("Login Successful!");
-
-      // Redirect based on role
       if (response.data.data.role === "admin") {
         navigate("/dashboard");
       } else {
         navigate("/cars");
       }
-
     } catch (error) {
-      alert(error.response?.data?.message || "Login Failed");
+      toast.error(error.response?.data?.message || "Login Failed");
       console.log(error);
     }
   };
 
   return (
-    <div
-      style={{
-        width: "350px",
-        margin: "80px auto",
-        padding: "20px",
-        border: "1px solid #ccc",
-        borderRadius: "10px",
-      }}
-    >
-      <h2 style={{ textAlign: "center" }}>Login</h2>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>Login</h2>
 
-      <form onSubmit={handleLogin}>
-        <div style={{ marginBottom: "15px" }}>
-          <label>Email</label>
-          <br />
-          <input
-            type="email"
-            placeholder="Enter Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={{ width: "100%", padding: "10px" }}
-          />
+        <form onSubmit={handleLogin}>
+          <div className="auth-group">
+            <label>Email</label>
+
+            <input
+              type="email"
+              placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="auth-group">
+            <label>Password</label>
+
+            <input
+              type="password"
+              placeholder="Enter Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button className="auth-btn" type="submit">
+            Login
+          </button>
+        </form>
+
+        <div className="auth-footer">
+          Don't have an account? <Link to="/signup">Sign Up</Link>
         </div>
-
-        <div style={{ marginBottom: "15px" }}>
-          <label>Password</label>
-          <br />
-          <input
-            type="password"
-            placeholder="Enter Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            style={{ width: "100%", padding: "10px" }}
-          />
-        </div>
-
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            padding: "10px",
-            cursor: "pointer",
-          }}
-        >
-          Login
-        </button>
-      </form>
+      </div>
     </div>
   );
 };

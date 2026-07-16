@@ -1,21 +1,22 @@
 .navbar {
+  height: 70px;
+  background: #1f2937;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #222;
-  padding: 15px 40px;
+  padding: 0 60px;
 }
 
-.navbar h2 {
-  color: white;
-  margin: 0;
+.logo {
+  color: #fbbf24;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
-  align-items: center;
+  gap: 35px;
 }
 
 .nav-links li {
@@ -23,15 +24,66 @@
 }
 
 .nav-links a {
-  color: white;
   text-decoration: none;
+  color: white;
   font-size: 17px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
-  color: orange;
+  color: #fbbf24;
 }
 
-.nav-links button:hover {
-  color: orange;
+.menu-container {
+  position: relative;
+}
+
+.menu-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.menu-icon:hover {
+  color: #fbbf24;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 180px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 14px 18px;
+  background: white;
+  color: #222;
+  text-decoration: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-menu button {
+  font-family: inherit;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #fbbf24;
+  color: white;
 }
